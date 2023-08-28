@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "orthanc_mock"
+name = "orthanc-mock"
 version = "0.1.0"
 description = "Mock for the python orthanc plugin intended for development"
 authors = ["Gabriel Couture <gacou54@ulaval.ca>"]
 readme = "README.md"
-packages = [{ include = "orthanc_mock" }]
+packages = [{ include = "orthanc" }]
 
 [tool.poetry.dependencies]
 python = "^3.8"

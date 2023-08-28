@@ -31,11 +31,10 @@ class {name.replace(':', '(Enum):')}
     methods = [m.replace('- Method ', '  def ') for m in methods]
     methods = [m.replace('()', '(self, *args)', 1) for m in methods]
     methods = [m.replace(': ', ':\n') for m in methods]
-    methods = [m.replace('\n', '\n        """"') + '"""' for m in methods]
+    methods = [m.replace('\n', '\n        """') + '"""' for m in methods]
 
     methods = [m + '\n        pass' for m in methods]
 
-    #methods = [m.replace(' ', '-') for m in methods]
     methods_as_str = '\n\n'.join(methods)
 
     return f'''
@@ -50,7 +49,7 @@ def _is_enum(class_str: str) -> bool:
     return 'enumeration' in class_str.split('\n')[1].lower()
 
 
-with open('./python-sdk.txt') as file:
+with open('./data/python-sdk.txt') as file:
     content = file.read()
 
 sections = content.split('\n\n')
@@ -66,9 +65,8 @@ python_code = f'''
 from enum import Enum
 
 {functions_code}
-
 {classes_code}
 '''
 
-with open('orthanc/orthanc_mock.py', 'w') as file:
+with open('orthanc.py', 'w') as file:
     file.write(python_code)

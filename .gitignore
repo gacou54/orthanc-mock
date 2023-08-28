@@ -1,0 +1,12 @@
+*
+
+!.gitignore
+!README.md
+!pyproject.toml
+
+!scripts/
+!scripts/**
+
+!orthanc.py
+
+*.pyc
