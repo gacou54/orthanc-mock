@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Mock for the python orthanc plugin intended for development"
 authors = ["Gabriel Couture <gacou54@ulaval.ca>"]
 readme = "README.md"
+homepage = "https://github.com/gacou54/orthanc-mock"
+repository = "https://github.com/gacou54/orthanc-mock"
+license = "MIT"
 packages = [{ include = "orthanc.py" }]
 
 [tool.poetry.dependencies]
